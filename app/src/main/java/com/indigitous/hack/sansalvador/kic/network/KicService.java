@@ -15,10 +15,6 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Created by Trainee-Dev on 11/5/2016.
- */
-
 public class KicService {
 
     private static KicApi mKicApi;
@@ -58,13 +54,13 @@ public class KicService {
                 @Override
                 public Response intercept(Chain chain) throws IOException {
                     //TODO: Set KicApplication.getInstance().getPreference().getToken()
-                    if (KicApplication.getInstance().getPreferences().toString() != null) {
+                    if (KicApplication.getInstance().getPreferences().getToken() != null) {
 
                         Request realRequest = chain.request();
                         Request.Builder requestBuilder = realRequest.newBuilder()
                                 .header("Accept", "application/json")
                                 .header("Authorization",
-                                        KicApplication.getInstance().getPreferences().toString())
+                                        KicApplication.getInstance().getPreferences().getToken().getId())
                                 .method(realRequest.method(), realRequest.body());
 
                         Request request = requestBuilder.build();

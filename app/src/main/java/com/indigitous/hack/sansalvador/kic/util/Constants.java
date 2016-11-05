@@ -4,6 +4,7 @@ package com.indigitous.hack.sansalvador.kic.util;
 public class Constants {
 
     public static final String APP_LOG = "kic_indigitous_2016";
+    public static final String KIC_TOKEN = "user_token";
 
     /**
      * Will handle all related to http request via retrofit

@@ -6,6 +6,13 @@ public class Token {
 
     //TODO: Provide with data that server sent
     @SerializedName("")
-    private Long mId;
+    private String mId;
 
+    public String getId() {
+        return mId;
+    }
+
+    public void setId(String mId) {
+        this.mId = mId;
+    }
 }
