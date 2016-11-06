@@ -2,7 +2,10 @@ package com.indigitous.hack.sansalvador.kic.network;
 
 import com.indigitous.hack.sansalvador.kic.model.Token;
 
+import org.json.JSONObject;
+
 import okhttp3.Response;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -19,7 +22,7 @@ public interface KicApi {
      */
     @FormUrlEncoded
     @POST("insertNewUser.php")
-    Call<Response> login(@Field("ext_id") String extId, @Field("ext_desc_id")
+    Call<ResponseBody> login(@Field("ext_id") String extId, @Field("ext_desc_id")
             String extDescId, @Field("create_timestamp") String createTimestamp);
 
 }

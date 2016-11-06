@@ -31,7 +31,7 @@ public class QrCodeFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         GenerateQrCode qrCode = new GenerateQrCode();
         try {
-            Bitmap qr = qrCode.generateQr(getContext(), getPreferences().getToken().getId(), 700);
+            Bitmap qr = qrCode.generateQr(getContext(), getPreferences().getToken().getExtId(), 700);
             ivQrCode.setImageBitmap(qr);
         } catch (WriterException e) {
             e.printStackTrace();

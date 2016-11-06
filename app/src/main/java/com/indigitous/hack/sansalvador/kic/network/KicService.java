@@ -60,7 +60,7 @@ public class KicService {
                         Request.Builder requestBuilder = realRequest.newBuilder()
                                 .header("Accept", "application/json")
                                 .header("Authorization",
-                                        KicApplication.getInstance().getPreferences().getToken().getId())
+                                        KicApplication.getInstance().getPreferences().getToken().getExtId())
                                 .method(realRequest.method(), realRequest.body());
 
                         Request request = requestBuilder.build();
@@ -76,10 +76,7 @@ public class KicService {
             HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
             loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
-            OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder()
-                    .addInterceptor(errorInterceptor)
-                    .addInterceptor(tokenInterceptor)
-                    .addInterceptor(loggingInterceptor);
+            OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder();
 
             OkHttpClient client = clientBuilder.build();
 

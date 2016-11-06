@@ -11,8 +11,11 @@ import java.util.Date;
 public class Token implements Parcelable {
 
     //TODO: Provide with data that server sent
+    @SerializedName("id")
+    private Long mId;
+    
     @SerializedName("ext_id")
-    private String mId;
+    private String mExtId;
 
     @SerializedName("ext_desc_id")
     private String mMethod;
@@ -20,18 +23,26 @@ public class Token implements Parcelable {
     @SerializedName("create_timestamp")
     private Date mDate;
 
-    public Token(String mId, String mMethod) {
-        this.mId = mId;
+    public Token(String mExtId, String mMethod) {
+        this.mExtId = mExtId;
         this.mMethod = mMethod;
         mDate = Calendar.getInstance().getTime();
     }
 
-    public String getId() {
+    public Long getId() {
         return mId;
     }
 
-    public void setId(String mId) {
+    public void setId(Long mId) {
         this.mId = mId;
+    }
+
+    public String getExtId() {
+        return mExtId;
+    }
+
+    public void setExtId(String mExtId) {
+        this.mExtId = mExtId;
     }
 
     public String getMethod() {
@@ -50,6 +61,7 @@ public class Token implements Parcelable {
         this.mDate = mDate;
     }
 
+
     @Override
     public int describeContents() {
         return 0;
@@ -57,19 +69,21 @@ public class Token implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.mId);
+        dest.writeValue(this.mId);
+        dest.writeString(this.mExtId);
         dest.writeString(this.mMethod);
         dest.writeLong(this.mDate != null ? this.mDate.getTime() : -1);
     }
 
     protected Token(Parcel in) {
-        this.mId = in.readString();
+        this.mId = (Long) in.readValue(Long.class.getClassLoader());
+        this.mExtId = in.readString();
         this.mMethod = in.readString();
         long tmpMDate = in.readLong();
         this.mDate = tmpMDate == -1 ? null : new Date(tmpMDate);
     }
 
-    public static final Parcelable.Creator<Token> CREATOR = new Parcelable.Creator<Token>() {
+    public static final Creator<Token> CREATOR = new Creator<Token>() {
         @Override
         public Token createFromParcel(Parcel source) {
             return new Token(source);
