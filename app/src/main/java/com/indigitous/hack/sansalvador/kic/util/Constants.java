@@ -12,7 +12,7 @@ public class Constants {
      */
     public class Network {
 
-        public static final String API_BASE_URL = "";
+        public static final String API_BASE_URL = "http://192.168.0.109/";
 
     }
 

@@ -13,7 +13,7 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     public void initComponents() {
-
+        hideActionBar();
     }
 
     @Override
@@ -28,4 +28,5 @@ public class LoginActivity extends BaseActivity {
             toolbar.setVisibility(View.GONE);
         }
     }
+
 }

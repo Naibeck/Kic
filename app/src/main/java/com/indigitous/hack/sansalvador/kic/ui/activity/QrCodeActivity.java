@@ -12,7 +12,7 @@ public class QrCodeActivity extends BaseActivity {
 
     @Override
     public void initComponents() {
-
+        hideActionBar();
     }
 
     @Override
@@ -25,5 +25,10 @@ public class QrCodeActivity extends BaseActivity {
         if (toolbar != null) {
             toolbar.setVisibility(View.GONE);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

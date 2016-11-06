@@ -1,5 +1,6 @@
 package com.indigitous.hack.sansalvador.kic.ui.activity;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -54,6 +55,14 @@ public abstract class BaseActivity extends AppCompatActivity {
     public abstract Fragment getContentFragment();
 
     public abstract void initToolbar();
+
+
+    public void hideActionBar() {
+        View decorView = getWindow().getDecorView();
+// Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+    }
 
     /*// Note: Your consumer key and secret should be obfuscated in your source code before shipping.
     private static final String TWITTER_KEY = "cCkP5xYgUS9E6vykaeEsZM8nZ";

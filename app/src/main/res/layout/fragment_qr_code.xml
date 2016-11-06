@@ -44,7 +44,6 @@
         android:text="@string/next_qr_label"
         android:textAllCaps="true"
         android:textStyle="bold"
-
         android:textColor="@color/sunset_orange"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"/>
