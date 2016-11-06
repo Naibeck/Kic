@@ -1,16 +1,20 @@
 package com.indigitous.hack.sansalvador.kic.ui.fragment;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.zxing.WriterException;
 import com.indigitous.hack.sansalvador.kic.R;
 import com.indigitous.hack.sansalvador.kic.helper.GenerateQrCode;
+import com.indigitous.hack.sansalvador.kic.ui.activity.HomeActivity;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class QrCodeFragment extends BaseFragment {
 
@@ -36,6 +40,11 @@ public class QrCodeFragment extends BaseFragment {
         } catch (WriterException e) {
             e.printStackTrace();
         }
+    }
 
+    @OnClick(R.id.tv_next)
+    void goHome() {
+        Intent intent = new Intent(getContext(), HomeActivity.class);
+        startActivity(intent);
     }
 }
