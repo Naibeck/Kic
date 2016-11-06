@@ -5,6 +5,7 @@ public class Constants {
 
     public static final String APP_LOG = "kic_indigitous_2016";
     public static final String KIC_TOKEN = "user_token";
+    public static final String DIGITS_TWITTER = "digits";
 
     /**
      * Will handle all related to http request via retrofit
