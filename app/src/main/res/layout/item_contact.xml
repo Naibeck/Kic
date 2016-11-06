@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="8dp">
@@ -14,14 +14,12 @@
             android:id="@+id/tv_item_contact_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAllCaps="true"
             android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/tv_item_contact_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAllCaps="true"
             android:textColor="@android:color/darker_gray" />
     </LinearLayout>
 
