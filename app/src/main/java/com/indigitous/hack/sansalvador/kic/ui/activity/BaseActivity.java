@@ -1,6 +1,5 @@
 package com.indigitous.hack.sansalvador.kic.ui.activity;
 
-import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -63,36 +62,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
     }
-
-    /*// Note: Your consumer key and secret should be obfuscated in your source code before shipping.
-    private static final String TWITTER_KEY = "cCkP5xYgUS9E6vykaeEsZM8nZ";
-    private static final String TWITTER_SECRET = "E3Z9CjDhzCiTvXq7dNzWwwhRymgMLUXr5svp9yJpRCmXgiDZQz";
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base);
-
-        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
-        Fabric.with(this, new TwitterCore(authConfig), new Digits.Builder().build());
-
-        DigitsAuthButton digitsButton = (DigitsAuthButton) findViewById(R.id.auth_button);
-        digitsButton.setCallback(new AuthCallback() {
-            @Override
-            public void success(DigitsSession session, String phoneNumber) {
-                // TODO: associate the session userID with your user model
-                Toast.makeText(getApplicationContext(), "Authentication successful for "
-                        + phoneNumber + " token: " + session.getAuthToken(), Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void failure(DigitsException exception) {
-                Log.d("Digits", "Sign in with Digits failure", exception);
-            }
-        });
-
-
-    }*/
 
     public void replaceFragment(Fragment fragment) {
         getSupportFragmentManager()
